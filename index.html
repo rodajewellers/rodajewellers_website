@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rameshwarji Roda Jewellers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <div class="max-w-4xl mx-auto p-6">
+    <!-- Logo and Title -->
+    <div class="text-center">
+      <img src="logo.png" alt="Roda Jewellers Logo" class="mx-auto w-28 mb-4">
+      <h1 class="text-3xl font-bold mb-2">Welcome to Rameshwarji Roda Jewellers</h1>
+      <p class="text-lg text-gray-600 mb-6">Download our app to explore, shop, and manage your jewellery purchases with ease.</p>
+      <a id="downloadLink" href="#" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-300">Download App</a>
+    </div>
+
+    <!-- Featured Catalogue -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-semibold text-center mb-6">Featured Catalogue</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="product1.jpg" alt="Product 1" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">
+        <img src="product2.jpg" alt="Product 2" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">
+        <img src="product3.jpg" alt="Product 3" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const androidLink = "https://play.google.com/store/apps/details?id=your.app.id";
+    const iosLink = "https://apps.apple.com/app/idxxxxxxxx";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const downloadBtn = document.getElementById("downloadLink");
+
+    if (/android/i.test(userAgent)) {
+      downloadBtn.href = androidLink;
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      downloadBtn.href = iosLink;
+    } else {
+      downloadBtn.textContent = "Visit App Store Page";
+      downloadBtn.href = androidLink;
+    }
+  </script>
+</body>
+</html>
